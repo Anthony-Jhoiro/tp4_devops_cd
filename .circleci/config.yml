@@ -47,6 +47,10 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp
+      
+      - run:
+          name: Test netflify
+          command: netflify --help
       - run:
           name: Deploy app
           command: echo todo && false
