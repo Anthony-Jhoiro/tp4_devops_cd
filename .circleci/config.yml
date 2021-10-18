@@ -49,11 +49,12 @@ jobs:
           at: /tmp
       
       - run:
-          name: Test netflify
-          command: netflify --help
+          name: Install netlify
+          command: yarn add -D netlify-cli
+      
       - run:
           name: Deploy app
-          command: echo todo && false
+          command: netlify deploy --prod
   back-test-unit:
     <<: *shared-config
     steps:
