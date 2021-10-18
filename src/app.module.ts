@@ -18,6 +18,9 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true,
         logging: configService.isLoggingDb ? 'all' : false,
+        extra: {
+          ssl: true,
+        },
       }),
       inject: [ConfigService],
     }),
