@@ -54,7 +54,7 @@ jobs:
       
       - run:
           name: Deploy app
-          command: netlify deploy --prod
+          command: ./node_modules/.bin/netlify deploy --prod
   back-test-unit:
     <<: *shared-config
     steps:
