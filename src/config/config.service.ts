@@ -13,7 +13,7 @@ const schema = z.object({
   LOG_SQL_REQUEST: z
     .string()
     .transform((value) => value === 'true')
-    .default('false'),
+    .default('true'),
   PORT: z.string()
     .transform(value => parseInt(value))
     .default('3000'),
