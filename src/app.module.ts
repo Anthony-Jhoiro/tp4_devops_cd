@@ -19,8 +19,11 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
         synchronize: true,
         logging: configService.isLoggingDb ? 'all' : false,
         extra: {
-          ssl: true,
-        },
+          ssl: {
+            rejectUnauthorized: false
+          },
+        
+        }, 
       }),
       inject: [ConfigService],
     }),
