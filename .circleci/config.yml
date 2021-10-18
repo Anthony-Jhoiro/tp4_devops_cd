@@ -54,7 +54,7 @@ jobs:
       
       - run:
           name: Deploy app
-          command: ./node_modules/.bin/netlify deploy --prod
+          command: yarn netlify deploy --prod --dir=/tmp/server-doc
   back-test-unit:
     <<: *shared-config
     steps:
