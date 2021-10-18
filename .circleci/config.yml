@@ -117,21 +117,19 @@ workflows:
   build-test-and-lint:
     jobs:
       - build
-      - back-test-unit:
-          requires:
-            - build
-      - back-test-e2e:
-          requires:
-            - build
-      - lint:
-          requires:
-            - build
+      # - back-test-unit:
+      #     requires:
+      #       - build
+      # - back-test-e2e:
+      #     requires:
+      #       - build
+      # - lint:
+      #     requires:
+      #       - build
       - docker-build-and-push:
           requires:
             - build
             - lint
-            - back-test-e2e
-            - back-test-unit
           filters:
             branches:
               only: main
@@ -139,8 +137,6 @@ workflows:
           requires:
             - build
             - lint
-            - back-test-e2e
-            - back-test-unit
           filters:
             branches:
               only: main
@@ -148,8 +144,6 @@ workflows:
           requires:
             - build
             - lint
-            - back-test-e2e
-            - back-test-unit
           filters:
             branches:
               only: main
